@@ -44,7 +44,7 @@ public class HTTPTransport: Transport {
             .validate()
             // swiftlint:disable:next line_length
             .responseDecodable(queue: queue, decoder: JRPCDecoder()) { (response: DataResponse<R, AFError>) in
-                guard let self = self else { return }
+//                guard let self = self else { return }
                 completion(response.result.mapError({ self.processAFError($0) }))
 
                 // Can be used for debugging purpose.
