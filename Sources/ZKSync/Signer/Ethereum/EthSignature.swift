@@ -14,7 +14,7 @@ public struct EthSignature: Encodable {
         case EIP1271Signature
     }
 
-    let signature: String
+    public let signature: String
     let type: SignatureType
 
     public init(signature: String, type: SignatureType) {
