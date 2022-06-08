@@ -43,7 +43,7 @@ public class HTTPTransport: Transport {
                              encoder: JSONParameterEncoder.default)
             .validate()
             // swiftlint:disable:next line_length
-            .responseDecodable(queue: queue, decoder: JRPCDecoder()) { [weak self] (response: DataResponse<R, AFError>) in
+            .responseDecodable(queue: queue, decoder: JRPCDecoder()) { (response: DataResponse<R, AFError>) in
                 guard let self = self else { return }
                 completion(response.result.mapError({ self.processAFError($0) }))
 
